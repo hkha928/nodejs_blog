@@ -1,0 +1,64 @@
+HTTP PROTOCOL
+http protocol: là cách thức website được truyền tải qua internet
+http request methods:
+    - get: lấy dữ liệu về (nhận dữ liệu từ phía server về phía client)
+    - post: gửi dữ liệu đi (gửi dữ liệu từ phía client về phía server)
+http status code:
+    - 1xx: info
+    - 2xx: success
+    - 3xx: điều hướng
+    - 4xx: client error
+    - 5xx: server error
+----------------------------------------
+SSR (server side rendering) & CSR (client side rendering)
+SSR thường được sử dụng trong các website cần yếu tố SEO
+SSR:
+    ưu điểm:
+        - tốt cho SEO
+        - request đầu tiên nhanh hơn
+        - thời gian phát triển ngắn hạn nhanh hơn
+    nhược điểm:
+        - thực hiện request toàn bộ lại từ đầu
+CSR cần giao tiếp với API để tải dữ liệu thêm
+
+nodemon.json config file có sự thay đổi. nếu đuôi file thay đổi thì restart server của ứng dụng lại 
+cấu trúc file
+public chứa các file tĩnh 
+resources không phải là file ra thẳng public
+
+app.get('/', (req, res) => {
+    res.render('home');
+});
+
+biến request chứa các thông tin mà phía ứng dụng client yêu cầu lên server (request header, request path, request method)
+biến respone có thể tùy chọn hoặc cấu hình kết quả trả về (respone, status code)
+----------------------------------------
+GET METHOD
+dùng để lấy dữ liệu
+xảy ra khi enter url hoặc click vào thẻ a chứa đường dẫn 
+form sẽ được gửi dưới dạng query parameters đính trên url
+----------------------------------------
+QUERY PARAMETERS
+url được gọi thì phía server thì các parameters này sẽ thể hiện dưới dạng object trong server
+sử dụng được trên tất cả các phương thức bởi vì được truyền trên url
+
+req.query
+
+middleware là thành phần đứng ở giữa. đứng trung gian để làm việc gì đó
+express tích hợp sẵn middleware để xử lý query parameters 
+----------------------------------------
+FORM DEFAULT BEHAVIOR 
+method 
+action 
+----------------------------------------
+POST METHOD
+form sẽ được gửi dưới dạng form data và ẩn đi trên url
+form-data: req.body
+----------------------------------------
+MVC
+https://minhtringuyen.info/mo-hinh-mvc-trong-php/
+----------------------------------------
+ROUTES & CONTROLLERS
+action -> dispatcher -> function handler
+
+/:slug là biến động 
